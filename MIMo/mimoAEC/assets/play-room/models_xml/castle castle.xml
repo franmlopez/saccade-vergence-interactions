@@ -1,0 +1,32 @@
+<!-- Castle -->
+
+<body name="castle">
+
+    <body name="castle_base1" pos=".15 -.2 .04" euler="0 0 40">
+        <geom class="scene" type="box" material="red" size=".02 .02 .04" density="200"/>
+    </body>
+    
+    <body name="castle_base2" pos=".255 -.3 .04" euler="0 0 70">
+        <geom class="scene" type="box" material="red" size=".02 .02 .04" density="200"/>
+    </body>
+    
+    <body name="castle_bridge" pos=".2 -.25 .1" euler="0 0 43">
+        <geom class="scene" type="box" material="blue" size=".02 .08 .02" density="200"/>
+    </body>
+    
+    <body name="castle_top1" pos=".25 -.3 .14" euler="0 0 46">
+        <geom class="scene" type="box" material="green" size=".02 .02 .02" density="200"/>
+    </body>
+    
+    <body name="castle_tower1" pos=".175 -.225 .16" euler="0 0 46">
+        <geom class="scene" type="box" material="red" size=".02 .02 .04" density="200"/>
+    </body>
+    
+    <body name="castle_tower2" pos=".168 -.216 .22" euler="0 0 74">
+        <geom class="scene" type="box" material="orange" size=".02 .02 .02" density="200"/>
+    </body>    
+   
+    <body name="castle_tower3" pos=".175 -.225 .26" euler="0 0 30">
+        <geom class="scene" type="box" material="yellow" size=".02 .02 .02" density="200"/>
+    </body>
+</body>

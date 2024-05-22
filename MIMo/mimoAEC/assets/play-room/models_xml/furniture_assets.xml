@@ -1,0 +1,58 @@
+ <!-- FURNITURE -->
+<asset>
+        <!-- chair -->
+        <texture file="tex/toys4k/chair_001/Textures/object_0_d.png" type="2d" name="tex_chair"/>
+        <material name="mat_chair" reflectance="0" texture="tex_chair" texuniform="true"/>
+        <mesh file="meshes/toys4k/chair_001.obj" name="mesh_chair" scale="0.2 0.2 0.2"/>  
+
+        <!-- cabinet -->
+        <texture file="meshes/3dFuture/9ba960e7-9f08-49fd-900d-80e86bccb902/raw_model/texture.png" type="2d" name="tex_cabinet"/>
+        <material name="mat_cabinet" reflectance="0" texture="tex_cabinet" texuniform="true"/>
+        <mesh file="meshes/3dFuture/9ba960e7-9f08-49fd-900d-80e86bccb902/raw_model/raw_model.obj" name="mesh_cabinet" scale="1 1 1 "/>  
+
+        <!-- cabinet filled with things -->
+        <texture file="meshes/3dFuture/fe7f9a02-218e-4513-8c34-4e87545af25b/raw_model/texture.png" type="2d" name="tex_cabinet2"/>
+        <material name="mat_cabinet2" reflectance="0" texture="tex_cabinet2" texuniform="true"/>
+        <mesh file="meshes/3dFuture/fe7f9a02-218e-4513-8c34-4e87545af25b/raw_model/raw_model.obj" name="mesh_cabinet2" scale="1 1 1 "/>  
+
+        
+
+        <!-- closet -->
+        <texture file="tex/toys4k/closet_001/Textures/object_0_d.png" type="2d" name="tex_closet2"/>
+        <material name="mat_closet2" reflectance="0" texture="tex_closet2" texuniform="true"/>
+        <mesh file="meshes/toys4k/closet_001.obj" name="mesh_closet2" scale=".25 .25 .25 "/>  
+        
+        <!-- bed -->
+        <texture file="meshes/3dFuture/b63d2ebf-36b4-4a0f-8c80-3cb2fa8516ff/raw_model/texture.png" type="2d" name="tex_bed"/>
+        <material name="mat_bed" reflectance="0" texture="tex_bed" texuniform="true"/>
+        <mesh file="meshes/3dFuture/b63d2ebf-36b4-4a0f-8c80-3cb2fa8516ff/raw_model/raw_model.obj" name="mesh_bed" scale="1 1 1 "/>  
+
+        <!-- uncleaned bed -->
+        <texture file="meshes/3dFuture/bed/129a993b-1a2b-4a1d-9a4d-fb1a014a34f1/raw_model/texture.png" type="2d" name="tex_bed2"/>
+        <material name="mat_bed2" reflectance="0" texture="tex_bed2" texuniform="true"/>
+        <mesh file="meshes/3dFuture/bed/129a993b-1a2b-4a1d-9a4d-fb1a014a34f1/raw_model/raw_model.obj" name="mesh_bed2" scale=".8 .8 .8 "/> 
+
+        <!-- baby bed -->
+        <!-- <texture file="/home/marcel/model_normalized_d.002.png" type="2d" name="tex_baby_bed"/>
+        <material name="mat_baby_bed" reflectance="0" texture="tex_baby_bed" texuniform="true"/>
+        <mesh file="meshes/shapenet/367044e655cdce1f109be8beeb87a681/models/test.obj" name="mesh_baby_bed" scale="1 1 1 "/>  -->
+
+
+        <!-- coffee table -->
+        <texture file="meshes/3dFuture/5bd0661c-1e5a-48ac-9419-90da4d9b01e7/raw_model/texture.png" type="2d" name="tex_coffee_table"/>
+        <material name="mat_coffee_table" reflectance="0" texture="tex_coffee_table" texuniform="true"/>
+        <mesh file="meshes/3dFuture/5bd0661c-1e5a-48ac-9419-90da4d9b01e7/raw_model/raw_model.obj" name="mesh_coffee_table" scale="1 1 1 "/>  
+
+        <texture file="meshes/3dFuture/43011bff-ea0d-4285-9d31-fc8c3a028f3f//raw_model/texture.png" type="2d" name="tex_coffee_table2"/>
+        <material name="mat_coffee_table2" reflectance="0" texture="tex_coffee_table2" texuniform="true"/>
+        <mesh file="meshes/3dFuture/43011bff-ea0d-4285-9d31-fc8c3a028f3f/raw_model/raw_model.obj" name="mesh_coffee_table2" scale="1 1 1 "/>  
+
+
+        <texture file="meshes/3dFuture/628f0512-9454-40ee-b65b-d3e253cc9227/raw_model/texture.png" type="2d" name="tex_shelf"/>
+        <material name="mat_shelf" reflectance=".2" texture="tex_shelf" texuniform="true"/>
+        <mesh file="meshes/3dFuture/628f0512-9454-40ee-b65b-d3e253cc9227/raw_model/raw_model.obj" name="mesh_shelf" scale=".7 .7 .7 "/>  
+
+
+
+
+</asset>

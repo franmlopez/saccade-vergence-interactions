@@ -1,0 +1,88 @@
+<mujoco model="raw_model">
+
+  <default>
+    <default class="visual">
+      <geom group="2" type="mesh" contype="0" conaffinity="0"/>
+    </default>
+    <default class="collision">
+      <geom group="3" type="mesh"/>
+    </default>
+  </default>
+
+  <asset>
+    <texture type="2d" name="texture" file="texture.png"/>
+    <material name="solid_001_wire" texture="texture" specular="0.776471" shininess="0.5"/>
+    <mesh file="raw_model.obj"/>
+    <mesh file="raw_model_collision_0.obj"/>
+    <mesh file="raw_model_collision_1.obj"/>
+    <mesh file="raw_model_collision_2.obj"/>
+    <mesh file="raw_model_collision_3.obj"/>
+    <mesh file="raw_model_collision_4.obj"/>
+    <mesh file="raw_model_collision_5.obj"/>
+    <mesh file="raw_model_collision_6.obj"/>
+    <mesh file="raw_model_collision_7.obj"/>
+    <mesh file="raw_model_collision_8.obj"/>
+    <mesh file="raw_model_collision_9.obj"/>
+    <mesh file="raw_model_collision_10.obj"/>
+    <mesh file="raw_model_collision_11.obj"/>
+    <mesh file="raw_model_collision_12.obj"/>
+    <mesh file="raw_model_collision_13.obj"/>
+    <mesh file="raw_model_collision_14.obj"/>
+    <mesh file="raw_model_collision_15.obj"/>
+    <mesh file="raw_model_collision_16.obj"/>
+    <mesh file="raw_model_collision_17.obj"/>
+    <mesh file="raw_model_collision_18.obj"/>
+    <mesh file="raw_model_collision_19.obj"/>
+    <mesh file="raw_model_collision_20.obj"/>
+    <mesh file="raw_model_collision_21.obj"/>
+    <mesh file="raw_model_collision_22.obj"/>
+    <mesh file="raw_model_collision_23.obj"/>
+    <mesh file="raw_model_collision_24.obj"/>
+    <mesh file="raw_model_collision_25.obj"/>
+    <mesh file="raw_model_collision_26.obj"/>
+    <mesh file="raw_model_collision_27.obj"/>
+    <mesh file="raw_model_collision_28.obj"/>
+    <mesh file="raw_model_collision_29.obj"/>
+    <mesh file="raw_model_collision_30.obj"/>
+    <mesh file="raw_model_collision_31.obj"/>
+  </asset>
+
+  <worldbody>
+    <body name="raw_model">
+      <geom material="solid_001_wire" mesh="raw_model" class="visual"/>
+      <geom mesh="raw_model_collision_0" class="collision"/>
+      <geom mesh="raw_model_collision_1" class="collision"/>
+      <geom mesh="raw_model_collision_2" class="collision"/>
+      <geom mesh="raw_model_collision_3" class="collision"/>
+      <geom mesh="raw_model_collision_4" class="collision"/>
+      <geom mesh="raw_model_collision_5" class="collision"/>
+      <geom mesh="raw_model_collision_6" class="collision"/>
+      <geom mesh="raw_model_collision_7" class="collision"/>
+      <geom mesh="raw_model_collision_8" class="collision"/>
+      <geom mesh="raw_model_collision_9" class="collision"/>
+      <geom mesh="raw_model_collision_10" class="collision"/>
+      <geom mesh="raw_model_collision_11" class="collision"/>
+      <geom mesh="raw_model_collision_12" class="collision"/>
+      <geom mesh="raw_model_collision_13" class="collision"/>
+      <geom mesh="raw_model_collision_14" class="collision"/>
+      <geom mesh="raw_model_collision_15" class="collision"/>
+      <geom mesh="raw_model_collision_16" class="collision"/>
+      <geom mesh="raw_model_collision_17" class="collision"/>
+      <geom mesh="raw_model_collision_18" class="collision"/>
+      <geom mesh="raw_model_collision_19" class="collision"/>
+      <geom mesh="raw_model_collision_20" class="collision"/>
+      <geom mesh="raw_model_collision_21" class="collision"/>
+      <geom mesh="raw_model_collision_22" class="collision"/>
+      <geom mesh="raw_model_collision_23" class="collision"/>
+      <geom mesh="raw_model_collision_24" class="collision"/>
+      <geom mesh="raw_model_collision_25" class="collision"/>
+      <geom mesh="raw_model_collision_26" class="collision"/>
+      <geom mesh="raw_model_collision_27" class="collision"/>
+      <geom mesh="raw_model_collision_28" class="collision"/>
+      <geom mesh="raw_model_collision_29" class="collision"/>
+      <geom mesh="raw_model_collision_30" class="collision"/>
+      <geom mesh="raw_model_collision_31" class="collision"/>
+    </body>
+  </worldbody>
+  
+</mujoco>

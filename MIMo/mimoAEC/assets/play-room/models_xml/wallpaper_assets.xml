@@ -1,0 +1,29 @@
+<!-- Wallpaper -->
+<asset>
+        <texture name="walls" type="2d" file="tex/binocular/wall.png"/>
+        <material name="walls" texture="walls"/>
+        
+        <texture name="walls-ice" type="2d" file="tex/binocular/wall-ice.png"/>
+        <material name="walls-ice" texture="walls-ice"/>
+        
+        <texture name="walls-marble" type="2d" file="tex/binocular/wall-marble.png"/>
+        <material name="walls-marble" texture="walls-marble" specular="0" texrepeat=".5 .5"/>
+        
+        <texture name="walls-green" type="2d" file="tex/binocular/wall-green.png"/>
+        <material name="walls-green" texture="walls-green"/>
+
+        <texture name="walls-dino" type="2d" file="tex/wallpaper/dino.png" />
+        <material name="walls-dino" texture="walls-dino" texrepeat="2 2" texuniform="true"/>
+
+        <texture name="walls-sketches" type="2d" file="tex/wallpaper-free/sketches.png" />
+        <material name="walls-sketches" texture="walls-sketches" texrepeat="1 1" texuniform="true"/>
+
+        <texture name="walls-planets" type="2d" file="tex/wallpaper-free/planets.png" />
+        <material name="walls-planets" texture="walls-planets" texrepeat="2 2" texuniform="true"/>
+
+        <texture name="walls-rainbow" type="2d" file="tex/wallpaper-free/rainbow.png" />
+        <material name="walls-rainbow" texture="walls-rainbow" texrepeat="2 2" texuniform="true"/>
+
+        <texture type="2d" file="tex/wallpaper-free/woodchip.png" />
+        <material name="walls-woodchip" texture="woodchip" texrepeat="6 6" texuniform="true" shininess="0" specular="0"/>
+</asset> 

@@ -1,0 +1,36 @@
+
+    <body name="raw_model">
+      <geom material="solid_001_wire" mesh="meshes/3dFuture/bed/129a993b-1a2b-4a1d-9a4d-fb1a014a34f1/raw_model/raw_model" class="visual"/>
+      <geom mesh="meshes/3dFuture/bed/129a993b-1a2b-4a1d-9a4d-fb1a014a34f1/raw_model/raw_model_collision_0" class="collision"/>
+      <geom mesh="meshes/3dFuture/bed/129a993b-1a2b-4a1d-9a4d-fb1a014a34f1/raw_model/raw_model_collision_1" class="collision"/>
+      <geom mesh="meshes/3dFuture/bed/129a993b-1a2b-4a1d-9a4d-fb1a014a34f1/raw_model/raw_model_collision_2" class="collision"/>
+      <geom mesh="meshes/3dFuture/bed/129a993b-1a2b-4a1d-9a4d-fb1a014a34f1/raw_model/raw_model_collision_3" class="collision"/>
+      <geom mesh="meshes/3dFuture/bed/129a993b-1a2b-4a1d-9a4d-fb1a014a34f1/raw_model/raw_model_collision_4" class="collision"/>
+      <geom mesh="meshes/3dFuture/bed/129a993b-1a2b-4a1d-9a4d-fb1a014a34f1/raw_model/raw_model_collision_5" class="collision"/>
+      <geom mesh="meshes/3dFuture/bed/129a993b-1a2b-4a1d-9a4d-fb1a014a34f1/raw_model/raw_model_collision_6" class="collision"/>
+      <geom mesh="meshes/3dFuture/bed/129a993b-1a2b-4a1d-9a4d-fb1a014a34f1/raw_model/raw_model_collision_7" class="collision"/>
+      <geom mesh="meshes/3dFuture/bed/129a993b-1a2b-4a1d-9a4d-fb1a014a34f1/raw_model/raw_model_collision_8" class="collision"/>
+      <geom mesh="meshes/3dFuture/bed/129a993b-1a2b-4a1d-9a4d-fb1a014a34f1/raw_model/raw_model_collision_9" class="collision"/>
+      <geom mesh="meshes/3dFuture/bed/129a993b-1a2b-4a1d-9a4d-fb1a014a34f1/raw_model/raw_model_collision_10" class="collision"/>
+      <geom mesh="meshes/3dFuture/bed/129a993b-1a2b-4a1d-9a4d-fb1a014a34f1/raw_model/raw_model_collision_11" class="collision"/>
+      <geom mesh="meshes/3dFuture/bed/129a993b-1a2b-4a1d-9a4d-fb1a014a34f1/raw_model/raw_model_collision_12" class="collision"/>
+      <geom mesh="meshes/3dFuture/bed/129a993b-1a2b-4a1d-9a4d-fb1a014a34f1/raw_model/raw_model_collision_13" class="collision"/>
+      <geom mesh="meshes/3dFuture/bed/129a993b-1a2b-4a1d-9a4d-fb1a014a34f1/raw_model/raw_model_collision_14" class="collision"/>
+      <geom mesh="meshes/3dFuture/bed/129a993b-1a2b-4a1d-9a4d-fb1a014a34f1/raw_model/raw_model_collision_15" class="collision"/>
+      <geom mesh="meshes/3dFuture/bed/129a993b-1a2b-4a1d-9a4d-fb1a014a34f1/raw_model/raw_model_collision_16" class="collision"/>
+      <geom mesh="meshes/3dFuture/bed/129a993b-1a2b-4a1d-9a4d-fb1a014a34f1/raw_model/raw_model_collision_17" class="collision"/>
+      <geom mesh="meshes/3dFuture/bed/129a993b-1a2b-4a1d-9a4d-fb1a014a34f1/raw_model/raw_model_collision_18" class="collision"/>
+      <geom mesh="meshes/3dFuture/bed/129a993b-1a2b-4a1d-9a4d-fb1a014a34f1/raw_model/raw_model_collision_19" class="collision"/>
+      <geom mesh="meshes/3dFuture/bed/129a993b-1a2b-4a1d-9a4d-fb1a014a34f1/raw_model/raw_model_collision_20" class="collision"/>
+      <geom mesh="meshes/3dFuture/bed/129a993b-1a2b-4a1d-9a4d-fb1a014a34f1/raw_model/raw_model_collision_21" class="collision"/>
+      <geom mesh="meshes/3dFuture/bed/129a993b-1a2b-4a1d-9a4d-fb1a014a34f1/raw_model/raw_model_collision_22" class="collision"/>
+      <geom mesh="meshes/3dFuture/bed/129a993b-1a2b-4a1d-9a4d-fb1a014a34f1/raw_model/raw_model_collision_23" class="collision"/>
+      <geom mesh="meshes/3dFuture/bed/129a993b-1a2b-4a1d-9a4d-fb1a014a34f1/raw_model/raw_model_collision_24" class="collision"/>
+      <geom mesh="meshes/3dFuture/bed/129a993b-1a2b-4a1d-9a4d-fb1a014a34f1/raw_model/raw_model_collision_25" class="collision"/>
+      <geom mesh="meshes/3dFuture/bed/129a993b-1a2b-4a1d-9a4d-fb1a014a34f1/raw_model/raw_model_collision_26" class="collision"/>
+      <geom mesh="meshes/3dFuture/bed/129a993b-1a2b-4a1d-9a4d-fb1a014a34f1/raw_model/raw_model_collision_27" class="collision"/>
+      <geom mesh="meshes/3dFuture/bed/129a993b-1a2b-4a1d-9a4d-fb1a014a34f1/raw_model/raw_model_collision_28" class="collision"/>
+      <geom mesh="meshes/3dFuture/bed/129a993b-1a2b-4a1d-9a4d-fb1a014a34f1/raw_model/raw_model_collision_29" class="collision"/>
+      <geom mesh="meshes/3dFuture/bed/129a993b-1a2b-4a1d-9a4d-fb1a014a34f1/raw_model/raw_model_collision_30" class="collision"/>
+      <geom mesh="meshes/3dFuture/bed/129a993b-1a2b-4a1d-9a4d-fb1a014a34f1/raw_model/raw_model_collision_31" class="collision"/>
+    </body>

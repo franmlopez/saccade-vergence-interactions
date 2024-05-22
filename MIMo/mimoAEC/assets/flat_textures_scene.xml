@@ -1,0 +1,237 @@
+<!-- Copyright 2021 DeepMind Technologies Limited
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+         http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<mujoco model="MIMo">
+
+    <compiler inertiafromgeom="true" angle="degree"/>
+
+    <option gravity="0 0 0" timestep="0.005" iterations="50" tolerance="1e-10" solver="Newton" jacobian="dense" cone="elliptic" impratio="1.0"/>
+
+    <size nconmax="1000" njmax="5000" nstack="10000000" nuser_cam="3"/>
+
+    <visual>
+        <map force="0.1" zfar="30" znear="0.005"/>
+        <rgba haze="0.15 0.25 0.35 1"/>
+        <quality shadowsize="0"/>
+        <global offwidth="800" offheight="800"/>
+    </visual>
+
+    <!-- Import everything except the kinematic tree -->
+	<include file="saccade_vergence_meta.xml"></include>
+
+    <asset>
+        <texture type="skybox" builtin="gradient" rgb1="0.3 0.5 0.7" rgb2="0 0 0" width="512" height="512"/>
+
+        <!--background-->
+        <texture name="background" type="2d" file="../../../data/background.png"/>
+        <material name="background" texture="background"/>
+
+        <!-- textures-->
+        <texture name="texture0" type="cube" filefront="../../../data/texture0.png" rgb1="0 0 0"/>
+        <texture name="texture1" type="cube" filefront="../../../data/texture1.png" rgb1="0 0 0"/>
+        <texture name="texture2" type="cube" filefront="../../../data/texture2.png" rgb1="0 0 0"/>
+        <texture name="texture3" type="cube" filefront="../../../data/texture3.png" rgb1="0 0 0"/>
+        <texture name="texture4" type="cube" filefront="../../../data/texture4.png" rgb1="0 0 0"/>
+        <texture name="texture5" type="cube" filefront="../../../data/texture5.png" rgb1="0 0 0"/>
+        <texture name="texture6" type="cube" filefront="../../../data/texture6.png" rgb1="0 0 0"/>
+        <texture name="texture7" type="cube" filefront="../../../data/texture7.png" rgb1="0 0 0"/>
+        <texture name="texture8" type="cube" filefront="../../../data/texture8.png" rgb1="0 0 0"/>
+        <texture name="texture9" type="cube" filefront="../../../data/texture9.png" rgb1="0 0 0"/>
+        <texture name="texture10" type="cube" filefront="../../../data/texture10.png" rgb1="0 0 0"/>
+        <texture name="texture11" type="cube" filefront="../../../data/texture11.png" rgb1="0 0 0"/>
+        <texture name="texture12" type="cube" filefront="../../../data/texture12.png" rgb1="0 0 0"/>
+        <texture name="texture13" type="cube" filefront="../../../data/texture13.png" rgb1="0 0 0"/>
+        <texture name="texture14" type="cube" filefront="../../../data/texture14.png" rgb1="0 0 0"/>
+        <texture name="texture15" type="cube" filefront="../../../data/texture15.png" rgb1="0 0 0"/>
+        <texture name="texture16" type="cube" filefront="../../../data/texture16.png" rgb1="0 0 0"/>
+        <texture name="texture17" type="cube" filefront="../../../data/texture17.png" rgb1="0 0 0"/>
+        <texture name="texture18" type="cube" filefront="../../../data/texture18.png" rgb1="0 0 0"/>
+        <texture name="texture19" type="cube" filefront="../../../data/texture19.png" rgb1="0 0 0"/>
+        <texture name="texture20" type="cube" filefront="../../../data/texture20.png" rgb1="0 0 0"/>
+        <texture name="texture21" type="cube" filefront="../../../data/texture21.png" rgb1="0 0 0"/>
+        <texture name="texture22" type="cube" filefront="../../../data/texture22.png" rgb1="0 0 0"/>
+        <texture name="texture23" type="cube" filefront="../../../data/texture23.png" rgb1="0 0 0"/>
+        <texture name="texture24" type="cube" filefront="../../../data/texture24.png" rgb1="0 0 0"/>
+        
+        <material name="target03" texture="texture0"/>
+        <material name="target12" texture="texture1"/>
+        <material name="target13" texture="texture2"/>
+        <material name="target14" texture="texture3"/>
+        <material name="target21" texture="texture4"/>
+        <material name="target22" texture="texture5"/>
+        <material name="target23" texture="texture6"/>
+        <material name="target24" texture="texture7"/>
+        <material name="target25" texture="texture8"/>
+        <material name="target30" texture="texture9"/>
+        <material name="target31" texture="texture10"/>
+        <material name="target32" texture="texture11"/>
+        <material name="target33" texture="texture12"/>
+        <material name="target34" texture="texture13"/>
+        <material name="target35" texture="texture14"/>
+        <material name="target36" texture="texture15"/>
+        <material name="target41" texture="texture16"/>
+        <material name="target42" texture="texture17"/>
+        <material name="target43" texture="texture18"/>
+        <material name="target44" texture="texture19"/>
+        <material name="target45" texture="texture20"/>
+        <material name="target52" texture="texture21"/>
+        <material name="target53" texture="texture22"/>
+        <material name="target54" texture="texture23"/>
+        <material name="target63" texture="texture24"/>
+    </asset>
+    
+    <equality>
+        <weld body1="head"/>
+        <weld body1="upper_body"/>
+        <weld body1="lower_body"/>
+        <weld body1="right_upper_arm"/>
+        <weld body1="right_hand"/>
+        <weld body1="left_upper_arm"/>
+        <weld body1="left_hand"/>
+        <weld body1="left_upper_leg"/>
+        <weld body1="left_foot"/>
+        <weld body1="right_upper_leg"/>
+        <weld body1="right_foot"/>
+    </equality>
+
+    <worldbody>
+        
+        <light directional="false" diffuse=".4 .4 .4" specular="0 0 0" pos="0 0 10" dir="0 0 -1" castshadow="false"/>
+        <light mode="targetbodycom" target="upper_body" directional="false" diffuse=".5 .5 .5" specular="0.3 0.3 0.3" pos="0 0 5.0" dir="0 0 -1"/>
+        <light mode="targetbodycom" target="upper_body" directional="false" diffuse=".5 .5 .5" specular="0.3 0.3 0.3" pos="5.0 0 0.5" dir="-1 0 0"/>
+        <light mode="targetbodycom" target="upper_body" directional="false" diffuse=".3 .3 .3" specular="0.3 0.3 0.3" pos="0 5 0.5" dir="0 -1 0"/>
+        <light mode="targetbodycom" target="upper_body" directional="false" diffuse=".3 .3 .3" specular="0.3 0.3 0.3" pos="0 -5 0.5" dir="0 1 0"/>
+        
+        <!-- Camera behind MIMo as an outside observer of the scene -->
+        <camera name="observer" mode="fixed" fovy="54" pos="0 0 0" euler="-90 -90 180"/>
+        <camera name="observer_side" mode="fixed" fovy="40" pos="-0.5 0.5 0" euler="-90 -60 180"/>
+
+        <!-- The location and orientation of the base model can be set using this body -->
+		<body name="mimo_location" pos="-0.07 0 -0.369375" euler="0 0 0">      <!--MIMo positioned such that his eye cameras are at x,z=0-->
+			<freejoint/>
+			<include file="saccade_vergence_model.xml"></include> <!-- Import the actual model-->
+		</body>
+
+        <!-- Background -->
+        <!--
+        <body name="background" pos="3 0 0">
+			<geom name="background" type="box" material="background" size="2 2 .01" pos="0 0 0" euler="90 -90 0"/>
+		</body>
+        -->
+
+        <!-- Target textures -->
+
+        <body name="target03" mocap="true" pos="1.0 -0.5 -0.5">
+			<geom name="target03" type="box" material="target03" size="0.02 0.02 .001" pos="0 0 0" euler="90 -90 0"/>
+		</body>
+
+        <body name="target12" mocap="true" pos="1.0 -0.25 -0.5">
+			<geom name="target12" type="box" material="target12" size="0.02 0.02 .001" pos="0 0 0" euler="90 -90 0"/>
+		</body>
+		
+        <body name="target13" mocap="true" pos="1.0 0.0 -0.5">
+			<geom name="target13" type="box" material="target13" size="0.02 0.02 .001" pos="0 0 0" euler="90 -90 0"/>
+		</body>
+
+        <body name="target14" mocap="true" pos="1.0 0.25 -0.5">
+			<geom name="target14" type="box" material="target14" size="0.02 0.02 .001" pos="0 0 0" euler="90 -90 0"/>
+		</body>
+
+        <body name="target21" mocap="true" pos="1.0 0.5 -0.5">
+			<geom name="target21" type="box" material="target21" size="0.02 0.02 .001" pos="0 0 0" euler="90 -90 0"/>
+		</body>
+		
+        <body name="target22" mocap="true" pos="1.0 -0.5 -0.25">
+			<geom name="target22" type="box" material="target22" size="0.02 0.02 .001" pos="0 0 0" euler="90 -90 0"/>
+		</body>
+
+        <body name="target23" mocap="true" pos="1.0 -0.25 -0.25">
+			<geom name="target23" type="box" material="target23" size="0.02 0.02 .001" pos="0 0 0" euler="90 -90 0"/>
+		</body>
+		
+        <body name="target24" mocap="true" pos="1.0 0.0 -0.25">
+			<geom name="target24" type="box" material="target24" size="0.02 0.02 .001" pos="0 0 0" euler="90 -90 0"/>
+		</body>
+
+        <body name="target25" mocap="true" pos="1.0 0.25 -0.25">
+			<geom name="target25" type="box" material="target25" size="0.02 0.02 .001" pos="0 0 0" euler="90 -90 0"/>
+		</body>
+
+        <body name="target30" mocap="true" pos="1.0 0.5 -0.25">
+			<geom name="target30" type="box" material="target30" size="0.02 0.02 .001" pos="0 0 0" euler="90 -90 0"/>
+		</body>
+
+        <body name="target31" mocap="true" pos="1.0 -0.5 0.0">
+			<geom name="target31" type="box" material="target31" size="0.02 0.02 .001" pos="0 0 0" euler="90 -90 0"/>
+		</body>
+
+        <body name="target32" mocap="true" pos="1.0 -0.25 0.0">
+			<geom name="target32" type="box" material="target32" size="0.02 0.02 .001" pos="0 0 0" euler="90 -90 0"/>
+		</body>
+		
+        <body name="target33" mocap="true" pos="1.0 0.0 0.0">
+			<geom name="target33" type="box" material="target33" size="0.02 0.02 .001" pos="0 0 0" euler="90 -90 0"/>
+		</body>
+
+        <body name="target34" mocap="true" pos="1.0 0.25 0.0">
+			<geom name="target34" type="box" material="target34" size="0.02 0.02 .001" pos="0 0 0" euler="90 -90 0"/>
+		</body>
+
+        <body name="target35" mocap="true" pos="1.0 0.5 0.0">
+			<geom name="target35" type="box" material="target35" size="0.02 0.02 .001" pos="0 0 0" euler="90 -90 0"/>
+		</body>
+		
+        <body name="target36" mocap="true" pos="1.0 -0.5 0.25">
+			<geom name="target36" type="box" material="target36" size="0.02 0.02 .001" pos="0 0 0" euler="90 -90 0"/>
+		</body>
+
+        <body name="target41" mocap="true" pos="1.0 -0.25 0.25">
+			<geom name="target41" type="box" material="target41" size="0.02 0.02 .001" pos="0 0 0" euler="90 -90 0"/>
+		</body>
+		
+        <body name="target42" mocap="true" pos="1.0 0.0 0.25">
+			<geom name="target42" type="box" material="target42" size="0.02 0.02 .001" pos="0 0 0" euler="90 -90 0"/>
+		</body>
+
+        <body name="target43" mocap="true" pos="1.0 0.25 0.25">
+			<geom name="target43" type="box" material="target43" size="0.02 0.02 .001" pos="0 0 0" euler="90 -90 0"/>
+		</body>
+
+        <body name="target44" mocap="true" pos="1.0 0.5 0.25">
+			<geom name="target44" type="box" material="target44" size="0.02 0.02 .001" pos="0 0 0" euler="90 -90 0"/>
+		</body>
+		
+        <body name="target45" mocap="true" pos="1.0 -0.5 0.5">
+			<geom name="target45" type="box" material="target45" size="0.02 0.02 .001" pos="0 0 0" euler="90 -90 0"/>
+		</body>
+
+        <body name="target52" mocap="true" pos="1.0 -0.25 0.5">
+			<geom name="target52" type="box" material="target52" size="0.02 0.02 .001" pos="0 0 0" euler="90 -90 0"/>
+		</body>
+		
+        <body name="target53" mocap="true" pos="1.0 0.0 0.5">
+			<geom name="target53" type="box" material="target53" size="0.02 0.02 .001" pos="0 0 0" euler="90 -90 0"/>
+		</body>
+
+        <body name="target54" mocap="true" pos="1.0 0.25 0.5">
+			<geom name="target54" type="box" material="target54" size="0.02 0.02 .001" pos="0 0 0" euler="90 -90 0"/>
+		</body>
+
+        <body name="target63" mocap="true" pos="1.0 0.5 0.5">
+			<geom name="target63" type="box" material="target63" size="0.02 0.02 .001" pos="0 0 0" euler="90 -90 0"/>
+		</body>
+
+    </worldbody>
+</mujoco>

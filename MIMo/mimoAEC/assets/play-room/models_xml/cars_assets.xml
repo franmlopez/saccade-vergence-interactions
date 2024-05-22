@@ -1,0 +1,22 @@
+<!-- CARS -->
+<asset>
+        <!-- <texture file="meshes/toys4k/cars/car_002/Textures/object_0_d.png" type="2d" name="tex-airplane"/> -->
+        <!-- <material name="mat_car1" reflectance="0.7" texture="tex-airplane" texuniform="true"/> -->
+
+        <mesh file="meshes/toys4k/car/car_001/car_001.obj" name="mesh_car1" scale="0.05 0.05 0.05"/>  
+        <texture file="meshes/toys4k/car/car_001/Textures/object_0_d.png" type="2d" name="tex_car1"/>
+        <material name="mat_car1" reflectance="0" texture="tex_car1" texuniform="true"/>
+
+        <mesh file="meshes/toys4k/car/car_005/car_005.obj" name="mesh_car2" scale="0.02 0.02 0.02"/>  
+        <texture file="meshes/toys4k/car/car_005/Textures/object_0_d.png" type="2d" name="tex_car2"/>
+        <material name="mat_car2" reflectance="0" texture="tex_car2" texuniform="true"/>
+
+        <mesh file="meshes/toys4k/car/car_023/car_023.obj" name="mesh_car3" scale="0.06 0.06 0.06"/>  
+        <texture file="meshes/toys4k/car/car_023/Textures/object_0_d.png" type="2d" name="tex_car3"/>
+        <material name="mat_car3" reflectance="0" texture="tex_car3" texuniform="true"/>
+
+        <mesh file="meshes/toys4k/bus/bus_003/bus_003.obj" name="mesh_bus1" scale="0.03 0.03 0.03"/>  
+        <texture file="meshes/toys4k/bus/bus_003/Textures/object_0_d.png" type="2d" name="tex_bus1"/>
+        <material name="mat_bus1" reflectance="0" texture="tex_bus1" texuniform="true"/>
+
+</asset> 

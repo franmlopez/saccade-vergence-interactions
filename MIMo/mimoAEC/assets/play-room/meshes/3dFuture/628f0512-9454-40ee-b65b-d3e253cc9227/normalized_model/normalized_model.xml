@@ -1,0 +1,22 @@
+<mujoco model="normalized_model">
+  <default>
+    <default class="visual">
+      <geom group="2" type="mesh" contype="0" conaffinity="0"/>
+    </default>
+    <default class="collision">
+      <geom group="3" type="mesh"/>
+    </default>
+  </default>
+  <asset>
+    <texture type="2d" name="texture" file="texture.png"/>
+    <material name="solid_001_wire" texture="texture" specular="0.3333333333333333" shininess="0.5"/>
+    <mesh file="normalized_model.obj"/>
+  </asset>
+  <worldbody>
+    <body name="normalized_model">
+      <freejoint/>
+      <geom material="solid_001_wire" mesh="normalized_model" class="visual"/>
+      <geom mesh="normalized_model" class="collision"/>
+    </body>
+  </worldbody>
+</mujoco>

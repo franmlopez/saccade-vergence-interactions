@@ -1,0 +1,19 @@
+
+<body>
+    <body name="car1" pos="-.2 -.1 .1">
+        <geom mesh="mesh_car1" material="mat_car1" type="mesh" size="0.1" pos="0 0 0" condim="6" euler="90 10 0"/>
+    </body>
+
+    <body name="car2" pos="-.15 .3 .1">
+        <geom mesh="mesh_car2" material="mat_car2" type="mesh" size="0.1" pos="0 0 0" condim="6" euler="90 30 0"/>
+    </body>
+
+    <body name="car3" pos=".15 .2 .1">
+        <geom mesh="mesh_car3" material="mat_car3" type="mesh" size="0.1" pos="0 0 0" condim="6" euler="90 -80 0"/>
+    </body>
+
+    <body name="bus1" pos=".25 -.3 .1">
+        <geom mesh="mesh_bus1" material="mat_bus1" type="mesh" size="0.1" pos="0 0 0" condim="6" euler="90 -40 0"/>
+    </body>
+
+</body>

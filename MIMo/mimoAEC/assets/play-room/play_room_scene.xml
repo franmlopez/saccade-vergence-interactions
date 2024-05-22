@@ -1,0 +1,267 @@
+<!-- Copyright 2021 DeepMind Technologies Limited
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+         http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<mujoco model="MIMo">
+
+    <compiler inertiafromgeom="true" angle="degree"/>
+
+    <option gravity="0 0 0" timestep="0.005" iterations="50" tolerance="1e-10" solver="Newton" jacobian="dense" cone="elliptic" impratio="1.0"/>
+
+    <size nconmax="1000" njmax="5000" nstack="10000000" nuser_cam="3"/>
+
+    <visual>
+        <map force="0.1" zfar="30" znear="0.005"/>
+        <rgba haze="0.15 0.25 0.35 1"/>
+        <quality shadowsize="0"/>
+        <!-- <global elevation="-15" offwidth="800" offheight="800"/> -->
+        <headlight ambient=".8 .8 .75" />
+    </visual>
+
+    
+    <default>
+		<default class="scene">
+			<geom condim="6" friction="1 0.005 0.0002" solimp="0.9995 0.9999 0.001 0.5 1" solref="0.005 1"/>
+			<default class="scene:bouncy">
+				<geom solimp="0.99 0.995 0.001 0.5 2" solref="-20000 -20"/>
+			</default>
+		</default>
+	</default>
+	
+
+    <!--<statistic center="0 0 0" />-->
+        
+    <asset>
+        <texture type="skybox" builtin="gradient" rgb1="0.3 0.5 0.7" rgb2="0 0 0" width="512" height="512"/>
+
+        <texture name="texgeom" type="cube" builtin="flat" mark="cross" width="127" height="1278"
+                rgb1="0.8 0.6 0.4" rgb2="0.8 0.6 0.4" markrgb="1 1 1" random="0.01"/>
+        <material name="matgeom-red" texture="texgeom" texuniform="true" rgba="0.8 0.2 .2 1"/>
+        <material name="matgeom-white" texture="texgeom" texuniform="true" rgba="1 1 1 1"/>
+        <material name="matgeom-black" texture="texgeom" texuniform="true" rgba="0 0 0 1"/>
+        <material name="windowsill" rgba="0.421 .279 .38 1" specular=".2" shininess=".8"/>
+
+
+        <!-- mats -->
+        <!-- letter mat -->
+        <texture name="tex_letter-mat" type="2d" file="tex/binocular/playing-mat.png"/>
+        <material name="mat_letter-mat" texture="tex_letter-mat"/>
+
+        <!-- traffic mat -->
+        <texture name="tex_traffic-mat" type="2d" file="tex/trafficmat/trafficmat3-edited.png"/>
+        <material name="mat_traffic-mat" texture="tex_traffic-mat"/>
+
+
+        <!--background-->
+        <texture name="background" type="2d" file="tex/binocular/background.png"/>
+        <material name="background" texture="background"/>
+
+        <texture name="garden-top" type="2d" file="tex/panoramas/garden2-top.png"/>
+        <material name="garden-top" texture="garden-top" shininess="0"/>
+
+        <texture name="garden-bottom" type="2d" file="tex/panoramas/garden2-bottom.png"/>
+        <material name="garden-bottom" texture="garden-bottom" shininess="0"/>
+
+        <!-- tree -->
+        <mesh file="meshes/Shapenet/19042f85f93a8b239f7e329438453d00/models/model_test.stl" name="mesh_tree" scale="2 2 2"  />  
+
+        
+
+        <!--floor-->
+        <texture name="floor" type="2d" file="tex/binocular/floor.png"/>
+        <material name="floor" texture="floor" texrepeat="4 4 " texuniform="true"/>
+
+       
+
+        <!-- door -->
+        <texture name="door" type="2d" file="tex/binocular/door.png"/>
+        <material name="door" texture="door"/>
+        <texture name="door_flipped" type="2d" hflip="true" file="tex/binocular/door.png"/>
+        <material name="door_flipped" texture="door"/>
+
+        <!--MATS PICTURES-->
+        <texture name="mat_picture_front" type="2d" file="tex/binocular/texture1.png"/>
+        <material name="mat_picture_front" texture="mat_picture_front"/>
+        <texture name="mat_picture_back" type="2d" file="tex/binocular/texture2.png"/>
+        <material name="mat_picture_back" texture="mat_picture_back"/>
+        <texture name="hello-mimo" type="2d" file="tex/binocular/hello-mimo.png"/>
+        <material name="mat_picture_left" texture="hello-mimo"/>
+        <texture name="mat_picture_right" type="2d" file="tex/binocular/texture3.png"/>
+        <material name="mat_picture_right" texture="mat_picture_right"/>
+
+        <!-- Objects on closet -->
+
+        <texture file="tex/toys4k/elephant_021/Textures/object_0_d.png" type="2d" name="tex-elephant"/>
+        <material name="mat_elephant" reflectance="0.7" texture="tex-elephant" texuniform="true"/>
+        <mesh file="meshes/toys4k/elephant_021.obj" name="elephant_mesh" scale="0.05 0.05 0.05"/>  
+
+        <include file="models_xml/furniture_assets.xml"></include>
+        <include file="models_xml/toys_assets.xml"></include>
+        <include file="models_xml/castle_assets.xml"></include>
+        <include file="models_xml/cars_assets.xml"></include>
+        <include file="models_xml/wallpaper_assets.xml"></include>
+
+    </asset>
+    
+    <!--
+    <equality>
+        <weld body1="head"/>
+        <weld body1="upper_body"/>
+        <weld body1="lower_body"/>
+        <weld body1="left_hand"/>
+        <weld body1="right_hand"/>
+        <weld body1="left_upper_leg"/>
+        <weld body1="left_foot"/>
+        <weld body1="right_upper_leg"/>
+        <weld body1="right_foot"/>
+    </equality>
+    -->
+
+
+    <!-- Import everything except the kinematic tree -->
+	<include file="../saccade_vergence_meta.xml"></include>
+  
+    <worldbody>
+
+        <!-- The location and orientation of the base model can be set using this body -->
+        <!--MIMo positioned such that his eye cameras are at x=0-->
+		<body name="mimo_location" pos="0 0 .4" euler="0 0 0">      
+			<freejoint/>
+			<include file="../saccade_vergence_model.xml"></include> <!-- Import the actual model-->
+            <camera name="face"  mode="fixed" fovy="90" pos="0.2 0 0.375"  euler="0 90 90"/>
+		</body>
+
+
+        <!-- MOVEABLE OBJECTS -->
+
+        <!-- Objects -->        
+        <!-- toys -->
+        <body name="toys_location" pos="0 0 0" euler="0 0 40">
+			<include file="models_xml/toys.xml"></include> 
+		</body>
+
+        <!-- castle -->
+        <body name="castle_location" pos="-1 .9 0" euler="0 0 0">     
+			<!-- <freejoint/> -->
+			<include file="models_xml/castle.xml"></include> 
+		</body>
+
+        <!-- cars -->
+        <body name="cars_location" pos=".9 .6 0" euler="0 0 0">     
+			<!-- <freejoint/> -->
+			<include file="models_xml/cars.xml"></include> 
+		</body>
+
+        <body name="panda" pos="-1.2 -1.2 .2" euler="0 0 20">
+            <!-- <freejoint/> -->
+            <geom mesh="mesh_panda" type="mesh" pos="0 0 0" condim="6" material="mat_panda" euler="0 0 0"/>
+        </body>
+
+        <!-- Furniture -->
+        <!-- cabinet with elephant on it -->
+        <body name="cabinet" pos="-1.75 .4 .01">
+            <geom mesh="mesh_cabinet" type="mesh" pos="0 0 0" condim="1" material="mat_cabinet" euler="90 -90 0"/>
+            <geom mesh="elephant_mesh" type="mesh" size="0.1" pos="0 0 .76" condim="6" material="mat_elephant" euler="90 90 0"/>
+        </body>
+
+        <!-- wine cabinet -->
+        <body name="cabinet2" pos="-1.25 1.7 .01">
+            <geom mesh="mesh_cabinet2" type="mesh" pos="0 0 0" condim="1" material="mat_cabinet2" euler="90 0 0"/>
+        </body>
+
+        <body name="closet" pos=".1 1.65 .85">
+            <geom mesh="mesh_closet2" type="mesh" pos="0 0 0" condim="1" material="mat_closet2" euler="90 0 0"/>
+        </body>
+
+        <body name="bed" pos="1.4 -.85 .01">
+            <geom mesh="mesh_bed2" type="mesh" pos="0 0 0" condim="6" material="mat_bed2" xyaxes="0 -1 0 0 0 1"/>
+        </body>
+
+        
+        <!-- floor & mats -->
+        <geom name="floor" pos="0 0 0" size="2 2 .01" type="box" material="floor" condim="3"/>
+        <!-- <geom name="ceiling" pos="0 0 2.5" size="2 2 .01" type="box" material="matgeom-white" condim="1"/> -->
+
+        <!-- <geom name="letter-mat" pos="-.2 .6 .001" size=".75 .75 .01" type="box" material="mat_letter-mat" condim="6"/> -->
+        <!-- <geom name="traffic-mat" pos="-1.115 -1 .001" size=".75 .75 .01" type="box" material="mat_traffic-mat" condim="6" euler="0 0 90"/>  -->
+        <geom name="traffic-mat" pos="-.8 -.75 .001" size=".85 .85 .01" type="box" material="mat_traffic-mat" condim="6" euler="0 0 85"/> 
+
+        <!-- <geom name="test-mat" pos="2 0 .001" size=".5 .01" type="cylinder" material="red" condim="1"/>  -->
+
+
+        <!-- walls -->
+        <geom name="wall-front" pos="2  0 1.25" size="2 1.25 .01" euler="90 -90 0" type="box" material="walls-rainbow" condim="1"/>  
+        <geom name="wall-right" pos="0 -2 1.25" size="2 1.25 .01" axisangle="1 0 0 90" type="box" material="walls-dino" condim="1"/>
+        <geom name="wall-left"  pos="0  2 1.25" size="2 1.25 .01" axisangle="1 0 0 90"  type="box" material="walls-planets" condim="1"/>
+        
+        <geom name="wall-back1" pos="-2  .9 1.25" size="1.1 1.25 .01" euler="90 90 0" type="box" material="walls-sketches" condim="1"/>  
+        <geom name="wall-back2" pos="-2 -.9  .2" size=".7 0.2 .01" euler="90 90 0" type="box" material="walls-sketches" condim="1"/>  
+        <geom name="wall-back3" pos="-2 -.9 2.3" size=".7 0.2 .01" euler="90 90 0" type="box" material="walls-sketches" condim="1"/>  
+        <geom name="wall-back4" pos="-2 -1.8 1.25" size=".2 1.25 .01" euler="90 90 0" type="box" material="walls-sketches" condim="1"/>  
+
+        <geom name="windowsill-bottom" pos="-2 -.9 .45" size=".7 .05 .025" euler="90 90 0" type="box" material="windowsill" condim="1"/>  
+        <geom name="windowsill-top"    pos="-2 -.9  2.05" size=".7 .05 .025" euler="90 90 0" type="box" material="windowsill" condim="1"/>  
+        <geom name="windowsill-outer"  pos="-2 -1.6 1.25" size=".025 .85 .025" euler="90 90 0" type="box" material="windowsill" condim="1"/> 
+        <geom name="windowsill-inner"  pos="-2 -.2 1.25" size=".025 .85 .025" euler="90 90 0" type="box" material="windowsill" condim="1"/> 
+
+        <geom name="garden-top" pos="-5 -1.8 1.6" size="4 1.61 .01" euler="90 -90 0" type="box" material="garden-top" condim="1"/>  
+        <geom name="garden-bottom" pos="-3.5 -1.8 -.01" size="4 1.61 .01" euler="0 0 90" type="box" material="garden-bottom" condim="1"/>  
+
+
+        <!-- Pictures on walls -->
+        <body name="picture_mimo" pos="-1.98 .4 .92">
+			<geom type="box" material="mat_picture_left" size=".47 .55 .01" pos="0 0 0.7" euler="90 -90 0"/>
+		</body>
+
+        <body name="picture_cat" pos="-.9 -1.98 .92">
+			<geom type="box" material="mat_picture_right" size=".5 .5 .01" pos="0 0 0.7" euler="90 0 0"/>
+		</body> 
+
+        <!-- <body name="picture_left1" pos="-1 1.95 .9" >
+			<geom type="box" material="mat_picture_back" size=".5 .5 .01" pos="0 0 0.7" euler="90 0 0"/>
+		</body> -->
+
+        <body name="picture_teddy" pos=".5 -1.95 .9">
+			<geom type="box" material="mat_picture_front" size=".5 .5 .01" pos="0 0 0.7" euler="90 0 0"/>
+		</body>
+
+
+        <!-- door -->
+        <body name="door" pos="1.95 1.3 0" gravcomp="1">
+			<geom type="box" material="door_flipped" size=".4 1 .01" pos="0 0 1" euler="90 90 0"/>
+        </body>
+
+
+        <!-- pos="-4.5 -2 1"   -->
+        <body name="tree" pos="-4 -1.6 .5">
+            <geom mesh="mesh_tree" type="mesh" pos="0 0 0" condim="1" euler="90 0 0" />
+        </body>
+
+              
+        <!-- LIGHTS -->
+        <!-- <light directional="false" diffuse=".4 .4 .4" specular="0 0 0" pos="0 0 10" dir="0 0 -1" castshadow="false"/>
+        <light mode="targetbodycom" target="upper_body" directional="false" diffuse=".5 .5 .5" specular="0.3 0.3 0.3" pos="0 0 5.0" dir="0 0 -1"/>
+        <light mode="targetbodycom" target="upper_body" directional="false" diffuse=".5 .5 .5" specular="0.3 0.3 0.3" pos="5.0 0 0.5" dir="-1 0 0"/>
+        <light mode="targetbodycom" target="upper_body" directional="false" diffuse=".3 .3 .3" specular="0.3 0.3 0.3" pos="0 5 0.5" dir="0 -1 0"/>
+        <light mode="targetbodycom" target="upper_body" directional="false" diffuse=".3 .3 .3" specular="0.3 0.3 0.3" pos="0 -5 0.5" dir="0 1 0"/>
+        <light mode="fixed" directional="false" diffuse="1 1 1" specular="1 1 1"  pos="-4 -3 2" dir="-1 -1 -.5" /> -->
+                
+
+
+        <!-- Camera behind MIMo as an outside observer of the sciene -->
+        <camera name="observer_side"  mode="targetbody" target="mimo_location" fovy="60" pos="-2 -0.8 1"  euler="0 -90 -90"/>
+        <camera name="observer" mode="fixed" fovy="60" pos="0 0 6" euler="0 0 -90"/>
+    </worldbody>
+
+</mujoco>

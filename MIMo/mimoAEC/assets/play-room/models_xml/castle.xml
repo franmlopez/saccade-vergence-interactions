@@ -1,0 +1,127 @@
+<!-- Castle -->
+
+<body name="castle">
+
+    <body name="castle_base1" pos=".15 -.2 .04" euler="0 0 40">
+        <geom class="scene" type="box" material="red" size=".02 .02 .04" density="200"/>
+    </body>
+    
+    <body name="castle_base2" pos=".255 -.3 .04" euler="0 0 70">
+        <geom class="scene" type="box" material="red" size=".02 .02 .04" density="200"/>
+    </body>
+    
+    <body name="castle_bridge" pos=".2 -.25 .1" euler="0 0 43">
+        <geom class="scene" type="box" material="blue" size=".02 .08 .02" density="200"/>
+    </body>
+    
+    <body name="castle_top1" pos=".25 -.3 .14" euler="0 0 46">
+        <geom class="scene" type="box" material="green" size=".02 .02 .02" density="200"/>
+    </body>
+    
+    <body name="castle_tower1" pos=".175 -.225 .16" euler="0 0 46">
+        <geom class="scene" type="box" material="red" size=".02 .02 .04" density="200"/>
+    </body>
+    
+    <body name="castle_tower2" pos=".168 -.216 .22" euler="0 0 74">
+        <geom class="scene" type="box" material="orange" size=".02 .02 .02" density="200"/>
+    </body>    
+   
+    <body name="castle_tower3" pos=".175 -.225 .26" euler="0 0 30">
+        <geom class="scene" type="box" material="yellow" size=".02 .02 .02" density="200"/>
+    </body>
+
+                
+    <body name="red_cube" pos="-.1 -.2 .02">
+        <geom class="scene" type="box" material="red" size="0.02 0.02 0.02" pos="0 0 0" density="200"/>
+    </body>
+    
+    <body name="yellow_cube" pos=".05 .1 .02" euler="0 0 10">
+        <geom class="scene" type="box" material="yellow" size="0.02 0.02 0.02" pos="0 0 0" density="200"/>
+    </body>
+    
+    <body name="blue_cube" pos="-.05 -.05 .02" euler="0 0 15">
+        <geom class="scene" type="box" material="blue" size="0.02 0.02 0.02" pos="0 0 0" density="200"/>
+    </body>
+    
+    <body name="yellow_cylinder" pos=".4 .4 0.03">
+        <geom class="scene" type="cylinder" material="yellow" size="0.0135 0.04" pos="0 0 0" density="200"/>
+    </body>
+    
+    <body name="blue_cylinder" pos=".15 -.125 0.04" euler="90 40 0">
+        <geom class="scene" type="cylinder" material="blue" size="0.0135 0.04" pos="0 0 0" density="200"/>
+    </body>
+    
+    <body name="orange_sphere" pos=".2 0.1 0.029">
+        <geom class="scene" type="sphere" material="orange" size="0.025" pos="0 0 0" density="200"/>
+    </body>
+
+    <body name="green_cylinder" pos=".2 .2 .04" euler="90 -20 0">
+        <geom class="scene" type="cylinder" material="green" size="0.0135 0.04" density="200"/>
+    </body>
+    
+</body>
+
+
+<!-- Castle -->
+<!-- 
+<body name="castle">
+
+    <body name="castle_base1" pos=".15 -.2 .05" euler="0 0 40">
+        <geom class="scene" type="box" material="red" size=".03 .03 .05" density="200"/>
+    </body>
+    
+    <body name="castle_base2" pos=".255 -.3 .05" euler="0 0 70">
+        <geom class="scene" type="box" material="red" size=".03 .03 .05" density="200"/>
+    </body>
+    
+    <body name="castle_bridge" pos=".2 -.25 .12" euler="0 0 43">
+        <geom class="scene" type="box" material="blue" size=".045 .125 .025" density="200"/>
+    </body>
+    
+    <body name="castle_top1" pos=".25 -.3 .17" euler="0 0 46">
+        <geom class="scene" type="box" material="green" size=".03 .03 .03" density="200"/>
+    </body>
+    
+    <body name="castle_tower1" pos=".175 -.225 .19" euler="0 0 46">
+        <geom class="scene" type="box" material="red" size=".03 .03 .05" density="200"/>
+    </body>
+    
+    <body name="castle_top4" pos=".153 -.203 .33" euler="0 0 44">
+        <geom class="scene" type="box" material="orange" size=".03 .03 .03" density="200"/>
+    </body>
+    
+   
+    <body name="castle_top2" pos=".175 -.225 .27" euler="0 0 30">
+        <geom class="scene" type="box" material="yellow" size=".03 .03 .03" density="200"/>
+    </body>
+
+                
+    <body name="red_cube" pos="-.1 -.2 .02">
+        <geom class="scene" type="box" material="red" size="0.02 0.02 0.02" pos="0 0 0" density="200"/>
+    </body>
+    
+    <body name="yellow_cube" pos=".05 .1 .02" euler="0 0 10">
+        <geom class="scene" type="box" material="yellow" size="0.02 0.02 0.02" pos="0 0 0" density="200"/>
+    </body>
+    
+    <body name="blue_cube" pos="-.05 -.05 .02" euler="0 0 15">
+        <geom class="scene" type="box" material="blue" size="0.02 0.02 0.02" pos="0 0 0" density="200"/>
+    </body>
+    
+    <body name="yellow_cylinder" pos=".4 .4 0.03">
+        <geom class="scene" type="cylinder" material="yellow" size="0.0135 0.04" pos="0 0 0" density="200"/>
+    </body>
+    
+    <body name="blue_cylinder" pos=".2 -0.1 0.04" euler="90 40 0">
+        <geom class="scene" type="cylinder" material="blue" size="0.0135 0.04" pos="0 0 0" density="200"/>
+    </body>
+    
+    <body name="orange_sphere" pos=".2 0.1 0.033">
+        <geom class="scene" type="sphere" material="orange" size="0.03" pos="0 0 0" density="200"/>
+    </body>
+
+    <body name="green_cylinder" pos=".2 .2 .04" euler="90 -20 0">
+        <geom class="scene" type="cylinder" material="green" size="0.0135 0.04" density="200"/>
+    </body>
+    
+</body> -->

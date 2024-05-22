@@ -1,0 +1,32 @@
+<asset>
+        <!-- airplane -->
+        <texture file="meshes/toys4k/airplane/airplane_001/Textures/object_0_d.png" type="2d" name="tex-airplane"/>
+        <material name="mat_airplane" reflectance="0.7" texture="tex-airplane" texuniform="true"/>
+        <mesh file="meshes/toys4k/airplane/airplane_001/airplane_001.obj" name="mesh_airplane" scale="0.05 0.05 0.05"/>  
+
+        <!-- bunny -->
+        <texture file="meshes/toys4k/bunny/bunny_001/Textures/object_0_d.png" type="2d" name="tex_bunny"/>
+        <material name="mat_bunny" reflectance="0" texture="tex_bunny" texuniform="true"/>
+        <mesh file="meshes/toys4k/bunny/bunny_001/bunny_001.obj" name="mesh_bunny" scale="0.05 0.05 0.05"/>  
+
+        <!-- boat -->
+        <texture file="tex/toys4k/boat_000/Textures/object_0_d.png" type="2d" name="tex_boat"/>
+        <material name="mat_boat" reflectance="0" texture="tex_boat" texuniform="true"/>
+        <mesh file="meshes/toys4k/boat_000.obj" name="mesh_boat" scale="0.05 0.05 0.05"/>  
+
+        <!-- dinosaur -->
+        <texture file="tex/toys4k/dinosaur_000/Textures/Trex_Mesh_Material #3_0_d.png" type="2d" name="tex_dinosaur"/>
+        <material name="mat_dinosaur" reflectance="0" texture="tex_dinosaur" texuniform="true"/>
+        <mesh file="meshes/toys4k/dinosaur_000.obj" name="mesh_dinosaur" scale="0.05 0.05 0.05"/> 
+
+         <!-- panda -->
+        <texture file="meshes/toys4k/panda/panda_023/Textures/BearBody_d.png" type="2d" name="tex_panda"/>
+        <material name="mat_panda" reflectance="0" texture="tex_panda" texuniform="true"/>
+        <mesh file="meshes/toys4k/panda/panda_023/panda_023.obj" name="mesh_panda" scale=".15 .15 .15"/>  
+
+        <!-- <texture file="meshes/shapenet/1a04e3eab45ca15dd86060f189eb133/models/material.mtl" type="2d" name="tex-airplane2"/>
+        <material name="mat_airplane2" reflectance="0.7" texture="tex-airplane2" texuniform="true"/>
+        <mesh file="meshes/shapenet/1a04e3eab45ca15dd86060f189eb133/models/model_test.stl" name="mesh_airplane2" scale="0.5 .5 .5"/>  -->
+
+        
+</asset> 

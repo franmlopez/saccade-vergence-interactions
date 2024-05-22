@@ -1,0 +1,22 @@
+<mujoco model="raw_model">
+  <default>
+    <default class="visual">
+      <geom group="2" type="mesh" contype="0" conaffinity="0"/>
+    </default>
+    <default class="collision">
+      <geom group="3" type="mesh"/>
+    </default>
+  </default>
+  <asset>
+    <texture type="2d" name="texture" file="texture.png"/>
+    <material name="solid_001_wire" texture="texture" specular="0.3333333333333333" shininess="0.5"/>
+    <mesh file="raw_model.obj"/>
+  </asset>
+  <worldbody>
+    <body name="raw_model">
+      <freejoint/>
+      <geom material="solid_001_wire" mesh="raw_model" class="visual"/>
+      <geom mesh="raw_model" class="collision"/>
+    </body>
+  </worldbody>
+</mujoco>
